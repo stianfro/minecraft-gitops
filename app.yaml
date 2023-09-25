@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minecraft
+  namespace: argocd
+spec:
+  project: default
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+  source:
+    repoURL: 'https://github.com/stianfro/minecraft-gitops.git'
+    path: charts/minecraft
+    helm:
+      values: |-
+        minecraft:
+          gamemode: survival
+          motd: 'minecraft.froystein.jp'
+          port: 25565
+  destination:
+    server: 'https://kubernetes.default.svc'
