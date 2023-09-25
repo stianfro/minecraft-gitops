@@ -4,7 +4,7 @@ metadata:
   name: minecraft-data-pvc
   namespace: minecraft
 spec:
-  storageClassName: local-path
+  storageClassName: {{ .Values.volume.storageClass }}
   accessModes:
     - ReadWriteOnce
   resources:

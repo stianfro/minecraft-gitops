@@ -5,6 +5,7 @@ minecraft:
 
 volume:
   storage: 3Gi
+  storageClass: hostpath
 
 resources:
   limits:

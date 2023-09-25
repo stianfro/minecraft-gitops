@@ -20,5 +20,8 @@ spec:
           gamemode: survival
           motd: 'minecraft.froystein.jp'
           port: 25565
+        volume:
+          storageClass: hostpath
+
   destination:
     server: 'https://kubernetes.default.svc'
